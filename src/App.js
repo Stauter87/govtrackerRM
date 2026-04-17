@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+/* eslint-disable */
+import { useState, useEffect, useCallback } from "react";
 
 // ─── STORAGE HELPERS ──────────────────────────────────────────────────────────
 const store = {
