@@ -902,7 +902,7 @@ export default function App() {
                 {[
                   ["📅 Назначен", selected.since || "—"],
                   ["⏱ Лет в должности", sinceYear ? `${currentYear - sinceYear} лет` : "—"],
-                  ["🎂 Год рождения", birthYear ? `${birthYear} (${currentYear-birthYear} лет)` : "—"],
+                  ["🎂 Дата рождения", selected.birthday ? (selected.birthday.includes('.') ? `${selected.birthday} (${currentYear - birthYear} лет)` : `${selected.birthday} г.р. (${currentYear - birthYear} лет)`) : "—"],
                   ["📊 Уровень иерархии", level >= 0 ? `${level} уровень` : "—"],
                 ].map(([l,v]) => (
                   <div key={l} style={{ background:"#0f0f0f", border:"1px solid #1a1a1a", borderRadius:7, padding:"8px 10px" }}>
@@ -961,7 +961,7 @@ export default function App() {
               {selected.bio && (
                 <div style={{ background:"#0a1628", border:"1px solid #1e3a5f", borderRadius:10, padding:14, marginBottom:12 }}>
                   <div style={{ fontSize:10, color:"#60a5fa", marginBottom:8, fontWeight:700 }}>📋 БИОГРАФИЯ / НАПРАВЛЕНИЯ</div>
-                  <div style={{ fontSize:12, color:"#c9d1db", lineHeight:1.8 }}>{selected.bio}</div>
+                  <div style={{ fontSize:12, color:"#c9d1db", lineHeight:1.9, whiteSpace:"pre-wrap", wordBreak:"break-word" }}>{selected.bio}</div>
                 </div>
               )}
 
